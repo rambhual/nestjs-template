@@ -29,7 +29,6 @@ import { createDocument } from './swagger/swagger';
 async function bootstrap() {
   const opts: NestApplicationOptions = {};
   const app = await NestFactory.create<NestExpressApplication>(AppModule, opts);
-
   app.setGlobalPrefix('api/v1');
   app.disable('x-powered-by');
   app.enableCors({

@@ -4,7 +4,7 @@ import { Response } from 'express';
 import { TokenService } from '../user/token.service';
 import { UserService } from '../user/user.service';
 import { AuthService } from './auth.service';
-import { JwtAuthGuard } from './guard/jwt-auth.guard';
+import { Public } from './decorators/public.decorator';
 import { JwtRefreshAuthGuard } from './guard/jwt-refresh-auth.guard';
 import { LocalAuthGuard } from './guard/local-auth.guard';
 import { UserRequest } from './interface/user-request';
@@ -19,6 +19,7 @@ export class AuthController {
   ) { }
 
   @UseGuards(LocalAuthGuard)
+  @Public()
   @Post('login')
   async login(@Req() req: UserRequest, @Res({ passthrough: true }) res: Response) {
     const access_token = this.authService.generateAccessToken(req.user)
@@ -42,7 +43,6 @@ export class AuthController {
   }
 
   @Get('profile')
-  @UseGuards(JwtAuthGuard)
   getProfile(@Req() req: any) {
     return this.userService.findUserById(req.user?.id)
   }
@@ -65,7 +65,6 @@ export class AuthController {
   }
 
   @Post('logout')
-  @UseGuards(JwtAuthGuard)
   async logout(@Req() req: UserRequest, @Res({ passthrough: true }) res: Response) {
     res.clearCookie('refresh_token')
     await this.tokenService.deleteByUserId(req.user.id)
