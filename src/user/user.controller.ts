@@ -7,6 +7,7 @@ import {
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { Crud, CrudController } from '@nestjsx/crud';
+import { Public } from '../auth/decorators/public.decorator';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UserEntity } from './entities/user.entity';
 import { UserService } from './user.service';
@@ -20,8 +21,9 @@ import { UserService } from './user.service';
 @Controller('users')
 @ApiTags('users')
 export class UserController implements CrudController<UserEntity> {
-  constructor(public service: UserService) {}
+  constructor(public service: UserService) { }
 
+  @Public()
   @Post()
   createUser(
     @Body() userDto: CreateUserDto,

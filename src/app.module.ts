@@ -1,3 +1,4 @@
+import { AbilityModule } from './ability/ability.module';
 import { APP_GUARD } from '@nestjs/core';
 import { DatabaseModule } from './database/database.module';
 import { Module } from '@nestjs/common';
@@ -13,6 +14,7 @@ import { JwtAuthGuard } from './auth/guard/jwt-auth.guard';
 
 @Module({
   imports: [
+    AbilityModule,
     ConfigModule.forRoot({ isGlobal: true }),
     DatabaseModule,
     UserModule,

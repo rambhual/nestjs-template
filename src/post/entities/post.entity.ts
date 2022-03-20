@@ -1,6 +1,7 @@
 import { Column, Entity, JoinColumn, ManyToOne } from "typeorm";
 import { AbstractEntity } from "../../shared/abstract-entity";
 import { Category } from "../../category/entities/category.entity";
+import { UserEntity } from "../../user/entities/user.entity";
 
 export enum Status {
     PUBLISHED = 'published',
@@ -8,7 +9,7 @@ export enum Status {
     REJECTED = 'rejected'
 }
 @Entity('posts')
-export class Post extends AbstractEntity {
+export class PostEntity extends AbstractEntity {
     @Column()
     title: string
 
@@ -21,4 +22,12 @@ export class Post extends AbstractEntity {
     @ManyToOne(() => Category, c => c.posts)
     @JoinColumn({ name: "category_id" })
     category: Category
+
+    @ManyToOne(() => UserEntity)
+    @JoinColumn({ name: "user_id" })
+    user: UserEntity
+
+    @Column({ type: "uuid", nullable: true })
+    user_id: string
+
 }
