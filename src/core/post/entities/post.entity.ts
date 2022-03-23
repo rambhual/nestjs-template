@@ -1,7 +1,7 @@
 import { Column, Entity, JoinColumn, ManyToOne } from "typeorm";
-import { AbstractEntity } from "../../shared/abstract-entity";
-import { Category } from "../../category/entities/category.entity";
-import { UserEntity } from "../../user/entities/user.entity";
+import { UserEntity } from "@core/user/entities/user.entity";
+import { AbstractEntity } from "@shared/abstract-entity";
+import { Category } from "@core/category/entities/category.entity";
 
 export enum Status {
     PUBLISHED = 'published',

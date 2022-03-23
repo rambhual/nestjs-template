@@ -1,6 +1,4 @@
-/*
-https://docs.nestjs.com/exception-filters#exception-filters-1
-*/
+
 
 import {
   ExceptionFilter,

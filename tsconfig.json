@@ -9,7 +9,16 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "moduleResolution": "node",
+    "baseUrl": "src",
+    "paths": {
+      "@core/*": ["core/*"],
+      "@database/*": ["database/*"],
+      "@filters/*": ["filters/*"],
+      "@shared/*": ["shared/*"],
+      "@swagger/*": ["swagger/*"],
+      "@ability/*": ["ability/*"]
+    },
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,

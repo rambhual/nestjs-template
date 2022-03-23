@@ -1,6 +1,6 @@
-import { PostEntity } from "src/post/entities/post.entity";
 import { Column, Entity, OneToMany } from "typeorm";
-import { AbstractEntity } from "../../shared/abstract-entity";
+import { PostEntity } from "@core/post/entities/post.entity";
+import { AbstractEntity } from "@shared/abstract-entity";
 
 @Entity('category')
 export class Category extends AbstractEntity {

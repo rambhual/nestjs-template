@@ -1,6 +1,6 @@
 
 import { SetMetadata } from '@nestjs/common';
-import { PostEntity } from '../post/entities/post.entity';
+import { PostEntity } from '../core/post/entities/post.entity';
 import { Action, Subjects } from './ability-factory.service';
 export interface RequiredRule {
   action: Action,

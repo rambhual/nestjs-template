@@ -1,11 +1,10 @@
+import { Repository } from 'typeorm'
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
-import { UserService } from '../user/user.service'
-import { Repository } from 'typeorm'
+import { UserService } from '@core/user/user.service'
 import { CreateResetDto } from './dto/create-reset.dto'
 import { UpdateResetDto } from './dto/update-reset.dto'
 import { Reset } from './entities/reset.entity'
-import passport from 'passport'
 
 @Injectable()
 export class ResetService {

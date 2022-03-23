@@ -1,3 +1,4 @@
+require('module-alias/register')
 import 'reflect-metadata';
 import { NestApplicationOptions } from '@nestjs/common';
 import { CrudConfigService } from '@nestjsx/crud';
@@ -32,7 +33,7 @@ async function bootstrap() {
   app.setGlobalPrefix('api/v1');
   app.disable('x-powered-by');
   app.enableCors({
-    origin: ["http://localhost:3100"],
+    origin: ["http://localhost:3100", "http://localhost:3333", "https://0weel6.csb.app"],
     credentials: true
   });
   app.use(helmet.noSniff());
