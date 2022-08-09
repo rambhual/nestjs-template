@@ -13,7 +13,7 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
       useFactory: (config: ConfigService): TypeOrmModuleOptions => ({
         type: 'postgres',
         host: config.get<string>('POSTGRES_HOST'),
-        port: 5432,
+        port: 5433,
         username: config.get<string>('POSTGRES_USERNAME'),
         password: config.get<string>('POSTGRES_PASSWORD'),
         database: config.get<string>('POSTGRES_DATABASE'),
@@ -25,4 +25,4 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
   controllers: [],
   providers: [],
 })
-export class DatabaseModule {}
+export class DatabaseModule { }

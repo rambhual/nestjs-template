@@ -1,5 +1,5 @@
 import { Column, Entity, OneToMany } from "typeorm";
-import { PostEntity } from "@core/post/entities/post.entity";
+import { PostEntity } from "../../post/entities/post.entity";
 import { AbstractEntity } from "@shared/abstract-entity";
 
 @Entity('category')

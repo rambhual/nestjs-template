@@ -16,10 +16,10 @@ export class UserService extends TypeOrmCrudService<UserEntity> {
     super(userRepository);
   }
 
-  createUser(userDto: CreateUserDto) {
+  async createUser(userDto: CreateUserDto): Promise<UserResponse> {
     const user = new UserEntity();
     Object.assign(user, userDto);
-    return this.userRepository.save(user);
+    return await this.userRepository.save(user);
   }
 
   async validateUser(email: string, password: string) {

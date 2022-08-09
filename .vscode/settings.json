@@ -10,5 +10,6 @@
       "username": "postgres",
       "password": "plumtree"
     }
-  ]
+  ],
+  "cSpell.words": ["nestjs", "nestjsx", "typeorm"]
 }

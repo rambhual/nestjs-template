@@ -4,8 +4,10 @@ import { ResetService } from './reset.service';
 import { CreateResetDto } from './dto/create-reset.dto';
 import { UpdateResetDto } from './dto/update-reset.dto';
 import { Reset } from './entities/reset.entity';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('reset')
+@ApiTags('reset')
 export class ResetController {
   constructor(private readonly resetService: ResetService,
     private readonly mailerService: MailerService

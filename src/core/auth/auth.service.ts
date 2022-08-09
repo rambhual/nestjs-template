@@ -15,4 +15,8 @@ export class AuthService {
   generateRefreshToken(user: UserEntity) {
     return this.jwt.sign({ id: user.id, email: user.email, role: user.role }, { expiresIn: "7d" })
   }
+
+  verifyToken(token: string): boolean {
+    return !!this.jwt.verify(token)
+  }
 }

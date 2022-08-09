@@ -2,9 +2,9 @@
 
 import { Ability, AbilityBuilder, ExtractSubjectType, InferSubjects } from '@casl/ability';
 import { Injectable } from '@nestjs/common';
-import { PostEntity, Status } from '../core/post/entities/post.entity';
-import { Category } from '../core/category/entities/category.entity';
-import { UserEntity, RoleEnum } from '../core/user/entities/user.entity';
+import { UserEntity, RoleEnum } from '@core/user/entities/user.entity';
+import { PostEntity, Status } from 'post/entities/post.entity';
+import { Category } from 'category/entities/category.entity';
 
 export enum Action {
     Manage = "manage",

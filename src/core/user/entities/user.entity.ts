@@ -1,7 +1,7 @@
-import { hashSync } from 'bcrypt';
-import { Exclude } from 'class-transformer';
-import { AbstractEntity } from '../../../shared/abstract-entity';
 import { BeforeInsert, Column, Entity } from 'typeorm';
+import { Exclude } from 'class-transformer';
+import { hashSync } from 'bcrypt';
+import { AbstractEntity } from '@shared/abstract-entity';
 
 export enum RoleEnum {
   USER = 'user',
